@@ -41,11 +41,20 @@ Open http://localhost:3000 to view the app in the browser.
 To deploy the project at vercel, follow the steps below
 ```bash
 # Getting Started with installing vercel.
-`yarn global add vercel`
+$ `yarn global add vercel`
 
 # Run vercel commands.
-`yarn login`
+$ yarn login
+
+# Run vercel CLI
+$ vercel
+
+# Run production deployment
+$ vercel --prod
 ```
 
 ## Preview
 **[move.it](https://moveit-roan-five.vercel.app)**
+
+---
+<p align="center">Developed by Georgina Rojas :hearts:</p>
