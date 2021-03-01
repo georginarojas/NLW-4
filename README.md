@@ -35,7 +35,7 @@ $ `yarn install` or `npm install`
 
 # Start the project
 $ `yarn dev` or `npm run dev`
-Open http://localhost:3000 to view the app in the browser.
+Open http://localhost:3000 with your browser to see the result.
 ```
 
 To deploy the project at vercel, follow the steps below
