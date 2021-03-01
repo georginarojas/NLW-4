@@ -25,7 +25,7 @@ The next level week, fourth edition (NLW-4) fostered by Rocketseat, is a week in
 ## Getting started
 Clone the project and access the folder "moveit"
 ```bash
-$ git clone 
+$ git clone https://github.com/georginarojas/NLW-4.git
 ```
 
 Follow the steps below
