@@ -1,34 +1,50 @@
 import { useContext } from "react";
 import { ChallengesContext } from "../contexts/ChallengesContext";
 import { CountdownContext } from "../contexts/CountdownContext";
+import { ModeDarkContext } from "../contexts/ModeDarkContext";
 import styles from "../styles/components/ChallengeBox.module.css";
 
 export function ChallengeBox() {
-  const { 
-    activeChallenge, 
-    resetChallenge, 
-    completedChallenge } = useContext(ChallengesContext);
+  const { activeChallenge, resetChallenge, completedChallenge } = useContext(
+    ChallengesContext
+  );
 
-  const {resetCountdown} = useContext(CountdownContext);
+  const { resetCountdown } = useContext(CountdownContext);
+  const { isModeDark } = useContext(ModeDarkContext);
 
-  function handleChallengeSucceeded(){
+  function handleChallengeSucceeded() {
     completedChallenge();
     resetCountdown();
   }
 
-  function handleChallengeFailed(){
+  function handleChallengeFailed() {
     resetChallenge();
     resetCountdown();
   }
 
   return (
-    <div className={styles.challengeBoxContainer}>
+    <div
+      id={styles.challengeBoxContainer}
+      className={
+        isModeDark
+          ? `${styles.challengeBoxContainerModeDark}`
+          : `${styles.challengeBoxContainer}`
+      }
+    >
       {activeChallenge ? (
         <div className={styles.challengeActive}>
           <header>Ganhe {activeChallenge.amount} xp</header>
           <main>
             <img src={`icons/${activeChallenge.type}.svg`} />
-            <strong>Novo desafio</strong>
+            <strong
+              className={
+                isModeDark?
+                  `${styles.challengeActiveStrongModeDark}`
+                  : `${styles.challengeActiveStrong}`
+              }
+            >
+              Novo desafio
+            </strong>
             <p>{activeChallenge.description}</p>
           </main>
           <footer>

@@ -1,7 +1,6 @@
-.challengeBoxContainer {
+#challengeBoxContainer {
   height: 100%;
 
-  background: var(--white);
   border-radius: 5px;
   box-shadow: 0 0 60px rgba(0, 0, 0, 0.05);
   padding: 1.5rem 2rem;
@@ -13,6 +12,16 @@
   justify-content: center;
   text-align: center;
 }
+
+/*  Mode dark styles */
+.challengeBoxContainer {
+  background: var(--white);
+}
+
+.challengeBoxContainerModeDark {
+  background: var(--block-dark);
+}
+/* -------------------- */
 
 .challengeNotActive {
   display: flex;
@@ -65,9 +74,19 @@
 .challengeActive main strong {
   font-size: 2rem;
   font-weight: 600;
-  color: var(--title);
+  /* color: var(--title); */
   margin: 1.5rem 0 1rem;
 }
+
+/* Mode dark styles */
+.challengeActiveStrong {
+  color: var(--title);
+}
+
+.challengeActiveStrongModeDark {
+  color: var(--title-light);
+}
+/* ----------------- */
 
 .challengeActive main p {
   line-height: 1.5;

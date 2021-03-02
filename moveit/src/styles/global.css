@@ -16,6 +16,11 @@
   --blue: #5965e0;
   --blue-dark: #4953b8;
   --blue-twitter: #2aa9e0;
+
+  --background-dark: #312e2e;
+  --block-dark: rgba(77, 81, 85, 0.8);
+  --text-light: #e3e6e9;
+  --title-light: #f3f0f0;
 }
 
 @media (max-width: 1080px) {
@@ -33,6 +38,13 @@
 body {
   background: var(--background);
   color: var(--text);
+  transition: background-color 0.5s;
+}
+
+.dark-mode {
+  background: var(--background-dark);
+  color: var(--text-light);
+  transition: background-color 0.5s;
 }
 
 body,
@@ -50,4 +62,3 @@ a {
   color: inherit;
   text-decoration: none;
 }
-
