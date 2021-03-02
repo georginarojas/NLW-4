@@ -11,14 +11,14 @@ import styles from "../styles/pages/Home.module.css";
 import { CountdownProvider } from "../contexts/CountdownContext";
 import { ChallengesProvider } from "../contexts/ChallengesContext";
 
-interface HomeProps{
+interface HomeProps {
   level: number;
   currentExperience: number;
   chanllengesCompleted: number;
+  isModeDark: boolean;
 }
 
 export default function Home(props: HomeProps) {
-  console.log(props);
   return (
     <ChallengesProvider
       level={props.level}
@@ -48,14 +48,20 @@ export default function Home(props: HomeProps) {
 }
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
-  const { level, currentExperience, chanllengesCompleted } = ctx.req.cookies;
-  const data = { level, currentExperience, chanllengesCompleted };
-  console.log(data);
+  const {
+    level,
+    currentExperience,
+    chanllengesCompleted,
+    isModeDark,
+  } = ctx.req.cookies;
+  const data = { level, currentExperience, chanllengesCompleted, isModeDark };
+
   return {
     props: {
       level: Number(level),
       currentExperience: Number(currentExperience),
       chanllengesCompleted: Number(chanllengesCompleted),
+      isModeDark: JSON.parse(isModeDark),
     },
   };
 };
