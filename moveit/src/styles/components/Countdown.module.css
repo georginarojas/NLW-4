@@ -108,6 +108,12 @@
   color: var(--white);
 }
 
+#countdownButton.countdownButtonAtive:not(:disabled):hover {
+  background: var(--red);
+  color: var(--white);
+}
+
+
 #countdownButton.countdownButton:disabled {
   background: var(--white);
   color: var(--text);

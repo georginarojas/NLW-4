@@ -3,6 +3,7 @@ import React, { createContext, ReactNode, useEffect, useState } from "react";
 import Switch from "react-switch";
 
 import "../styles/components/ChallengeBox.module.css";
+import styles from "../styles/components/SwitchModeDark.module.css";
 
 interface ModeDarkContextData {
   isModeDark: boolean;
@@ -40,7 +41,17 @@ export function ModeDarkProvider({ children, ...rest }: ModeDarkProviderProps) {
   return (
     <ModeDarkContext.Provider value={{ isModeDark }}>
       {children}
-      <Switch onChange={handleChange} checked={isModeDark} />
+      <div className={styles.switchModeDark}>
+        <Switch
+          onChange={handleChange}
+          checked={isModeDark}
+          height={15}
+          width={48}
+          handleDiameter={20}
+          boxShadow="0px 1px 5px rgba(0, 0, 0, 0.6)"
+          activeBoxShadow="0px 0px 1px 10px rgba(0, 0, 0, 0.2)"
+        />
+      </div>
     </ModeDarkContext.Provider>
   );
 }

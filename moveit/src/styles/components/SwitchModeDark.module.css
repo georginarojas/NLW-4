@@ -1,0 +1,10 @@
+.switchModeDark {
+    position: absolute;
+    top: 1.5rem;
+    bottom: 50rem;
+    left: 55rem;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
