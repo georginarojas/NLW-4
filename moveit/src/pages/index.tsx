@@ -1,67 +1,31 @@
-import React from "react";
-import { GetServerSideProps } from "next";
-import Head from "next/head";
-import { CompletedChallenges } from "../components/CompletedChallenges";
-import { Countdown } from "../components/Countdown";
-import { ExperienceBar } from "../components/ExperienceBar";
-import { Profile } from "../components/Profile";
-import { ChallengeBox } from "../components/ChallengeBox";
+import React, { useEffect } from "react";
 
-import styles from "../styles/pages/Home.module.css";
-import { CountdownProvider } from "../contexts/CountdownContext";
-import { ChallengesProvider } from "../contexts/ChallengesContext";
+import styles from "../styles/pages/Login.module.css";
 
-interface HomeProps {
-  level: number;
-  currentExperience: number;
-  chanllengesCompleted: number;
-  isModeDark: boolean;
-}
-
-export default function Home(props: HomeProps) {
+export default function Login(props) {
+  useEffect(() => {
+    document.body.classList.add("loginBody");
+    document.body.classList.remove("body");
+  }, []);
   return (
-    <ChallengesProvider
-      level={props.level}
-      currentExperience={props.currentExperience}
-      chanllengesCompleted={props.chanllengesCompleted}
-    >
-      <div className={styles.container}>
-        <Head>
-          <title>Inicio | move.it</title>
-        </Head>
-        <ExperienceBar />
-        <CountdownProvider>
-          <section>
-            <div>
-              <Profile />
-              <CompletedChallenges />
-              <Countdown />
-            </div>
-            <div>
-              <ChallengeBox />
-            </div>
-          </section>
-        </CountdownProvider>
-      </div>
-    </ChallengesProvider>
+    <div className={styles.container}>
+      <section>
+        <div className={styles.simbolo}>
+          <img src="icons/simbolo.svg" alt="simbolo-login" />
+        </div>
+        <div>
+          <div className={styles.containerlogo}>
+            <img src="logo.svg" alt="logo" />
+          </div>
+          <div className={styles.containerTitle}>
+            <p>Bem-vindo</p>
+          </div>
+          <div className={styles.containerInput}>
+            <img src="icons/github.svg" alt="logo-github" />
+            <p>Faça login com o seu GitHub </p> <br /> <p>para começar</p>
+          </div>
+        </div>
+      </section>
+    </div>
   );
 }
-
-export const getServerSideProps: GetServerSideProps = async (ctx) => {
-  const {
-    level,
-    currentExperience,
-    chanllengesCompleted,
-    isModeDark,
-  } = ctx.req.cookies;
-  const data = { level, currentExperience, chanllengesCompleted, isModeDark };
-
-  return {
-    props: {
-      level: Number(level),
-      currentExperience: Number(currentExperience),
-      chanllengesCompleted: Number(chanllengesCompleted),
-      isModeDark: JSON.parse(isModeDark),
-    },
-  };
-};

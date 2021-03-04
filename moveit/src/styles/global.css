@@ -47,6 +47,10 @@ body {
   transition: background-color 0.5s;
 }
 
+.loginBody{
+  background: #5965E0;
+}
+
 body,
 input,
 textarea,
