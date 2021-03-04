@@ -28,23 +28,83 @@
   text-align: center;
 }
 
-.containerlogo{
-    display:flex;
-    align-items: center;
-    padding: 5rem 0 0 0;
-
+.containerlogo {
+  display: flex;
+  align-items: center;
+  padding: 5rem 0 0 0;
 }
 
 .containerlogo > img {
-    width: 60%;
-    height: 60%;
+  width: 60%;
+  height: 60%;
 }
 
-.containerTitle > p{
-    font-size: 36px;
-    font-weight: 600;
-    color: var(--white);
-    display: flex;
-    align-items: center;
-    padding: 7rem 0 0 0;
+.containerTitle > p {
+  font-size: 36px;
+  font-weight: 600;
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  padding: 7rem 0 0 0;
+}
+
+.containerText {
+  display: inline-block;
+}
+
+.containerText > img {
+  display: inline-block;
+  align-content: left;
+  padding: 2rem 0 0 0;
+}
+
+.containerText > div {
+  display: inline-block;
+  align-content: left;
+  color: #b2b9ff;
+  font-weight: 500;
+  font-size: 20px;
+  padding: 0 0 0 1.5rem;
+}
+
+.containerText > div > p {
+  padding: 0 0 0.3rem 0;
+}
+
+.containerInput > input {
+  display: inline-block;
+  align-content: left;
+  margin-top: 2rem;
+  width: 22rem;
+  height: 4rem;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+  border: 0;
+  background: linear-gradient(
+    to right,
+    #4953b8 0%,
+    rgba(73, 83, 184, 0.2) 100%
+  );
+  padding: 0 0 0 2rem;
+}
+
+.inputField::-webkit-input-placeholder {
+  color: #b2b9ff;
+  font-size: 20px;
+  font-weight: 400;
+  align-items: center;
+}
+
+.inputImg {
+  margin-top: 2rem;
+  height: 4rem;
+  width: 4rem;
+  display: inline-block;
+  align-content: left;
+  background: #4953B8;
+  border: 0;
+}
+
+.inputImg > img {
+  align-content: center;
 }

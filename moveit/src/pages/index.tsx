@@ -20,9 +20,20 @@ export default function Login(props) {
           <div className={styles.containerTitle}>
             <p>Bem-vindo</p>
           </div>
-          <div className={styles.containerInput}>
+          <div className={styles.containerText}>
             <img src="icons/github.svg" alt="logo-github" />
-            <p>Faça login com o seu GitHub </p> <br /> <p>para começar</p>
+            <div>
+              <p>Faça login com o seu GitHub </p> <p>para começar</p>
+            </div>
+          </div>
+          <div className={styles.containerInput}>
+            <input
+              className={styles.inputField}
+              placeholder="Digite seu username"
+            />
+            <div className={styles.inputImg}>
+              <img src="icons/vector.svg" alt="arrow-input" />
+            </div>
           </div>
         </div>
       </section>
