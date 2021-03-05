@@ -88,6 +88,15 @@
     rgba(73, 83, 184, 0.2) 100%
   );
   padding: 0 0 0 2rem;
+
+  color: var(--white);
+  font-size: 20px;
+  font-weight: 500;
+
+}
+
+.inputField:focus {
+    outline: none;
 }
 
 .inputField::-webkit-input-placeholder {
@@ -97,7 +106,7 @@
   align-items: center;
 }
 
-.inputImg {
+.inputButton {
   display: inline;
   float: left;
   height: 4rem;
@@ -110,4 +119,9 @@
   padding: 20px;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
+}
+
+.inputButton:hover {
+    background: #4CD62B;
+    outline: none;
 }

@@ -1,12 +1,30 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 
 import styles from "../styles/pages/Login.module.css";
 
 export default function Login(props) {
+  const router = useRouter();
+  const [username, setUsername] = useState(null);
+
+  function handleChange(e) {
+    e.preventDefault();
+    let value = e.target.value;
+    setUsername(value);
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    if (username) {
+      router.push(`/home/${username}`);
+    }
+  }
+
   useEffect(() => {
     document.body.classList.add("loginBody");
     document.body.classList.remove("body");
   }, []);
+
   return (
     <div className={styles.container}>
       <section>
@@ -26,15 +44,16 @@ export default function Login(props) {
               <p>Faça login com o seu GitHub </p> <p>para começar</p>
             </div>
           </div>
-          <div className={styles.containerInput}>
+          <form className={styles.containerInput} onSubmit={handleSubmit}>
             <input
               className={styles.inputField}
               placeholder="Digite seu username"
+              onChange={handleChange}
             />
-            <div className={styles.inputImg}>
+            <button type="submit" className={styles.inputButton}>
               <img src="icons/vector.svg" alt="arrow-input" />
-            </div>
-          </div>
+            </button>
+          </form>
         </div>
       </section>
     </div>
