@@ -2,7 +2,6 @@
   height: 100vh;
   max-width: 100vw;
   margin: 0 auto;
-  /* padding: 5rem 0 5rem 0; */
   display: flex;
   flex-direction: column;
 }
@@ -10,7 +9,6 @@
 .container section {
   flex: 1;
   display: grid;
-  /* margin-top: 2rem; */
   grid-template-columns: 1fr 1fr;
   gap: 6.25rem;
   align-content: center;
@@ -19,7 +17,6 @@
 .simbolo > img {
   height: 95%;
   width: 100%;
-  /* padding: 5rem 0 5rem 0; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -35,8 +32,8 @@
 }
 
 .containerlogo > img {
-  width: 60%;
-  height: 60%;
+  width: 55%;
+  height: 55%;
 }
 
 .containerTitle > p {
@@ -71,10 +68,15 @@
   padding: 0 0 0.3rem 0;
 }
 
-.containerInput > input {
-  display: inline-block;
-  align-content: left;
+.containerInput {
+  display: inline;
+  float: left;
   margin-top: 2rem;
+}
+
+.containerInput > input {
+  display: inline;
+  float: left;
   width: 22rem;
   height: 4rem;
   border-bottom-left-radius: 5px;
@@ -96,15 +98,16 @@
 }
 
 .inputImg {
-  margin-top: 2rem;
+  display: inline;
+  float: left;
   height: 4rem;
   width: 4rem;
-  display: inline-block;
-  align-content: left;
-  background: #4953B8;
   border: 0;
-}
-
-.inputImg > img {
-  align-content: center;
+  background: #4953b8;
+  margin: 0 auto;
+  text-align: center;
+  vertical-align: middle;
+  padding: 20px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
