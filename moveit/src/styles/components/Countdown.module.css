@@ -88,6 +88,10 @@
   transition: background-color 0.2s;
 }
 
+#countdownButton:focus{
+  outline: none;
+}
+
 #countdownButton:not(:disabled):hover {
   background: var(--blue-dark);
 }

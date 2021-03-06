@@ -1,0 +1,94 @@
+#containerMenu {
+  width: 112px;
+  height: 100vh;
+
+  flex: 1;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 2rem 0 2rem 0;
+}
+
+#containerMenu.container {
+  background: linear-gradient(to bottom, #fff 0%, rgba(255, 255, 255, 0) 100%);
+  filter: drop-shadow(0px 0px 60px rgba(0, 0, 0, 0.1));
+}
+
+#containerMenu.containerDark {
+  background: linear-gradient(
+    to bottom,
+    rgb(144, 145, 151) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  filter: drop-shadow(0px 0px 60px rgba(221, 216, 216, 0.1));
+}
+
+#menuButton {
+  display: flex;
+  align-items: center;
+  margin: auto;
+  background: rgba(255, 255, 255, 0);
+}
+
+#menuButton > ul > li > button {
+  width: 112px;
+  height: 65px;
+  background: rgba(255, 255, 255, 0);
+  position: flex;
+  border: 0;
+
+  display: flex;
+  align-items: center;
+}
+
+#menuButton > ul > li > button:not(:disabled):hover {
+  background: rgb(89, 101, 224, 0.3);
+  outline: none;
+  transition: background-color 0.2s;
+}
+
+#menuButton > ul > li > button:disabled {
+  cursor: none;
+}
+
+#menuButton > ul > li > button > div {
+  width: 5px;
+  height: 56px;
+  margin: 0.5rem 0;
+  /* background-color: var(--blue); */
+  border-radius: 0 5px 5px 0;
+}
+
+#menuButton.menuButtonNormal > ul > li > button > div {
+  background-color: var(--blue);
+}
+
+#menuButton.menuButtonDark > ul > li > button > div {
+  background-color: #472dee;
+}
+
+#menuButton > ul > li > button > img {
+  display: flex;
+  align-items: center;
+  margin: auto;
+}
+
+/* #containerMenu.homeBtn:hover,
+#containerMenu.rankingBtn:hover {
+  background: rgb(89, 101, 224, 0.3);
+  outline: none;
+  transition: background-color 0.2s;
+} */
+
+#containerMenu > footer > button {
+  width: 112px;
+  height: 56px;
+  background: rgba(255, 255, 255, 0);
+  border: 0;
+}
+
+#containerMenu > footer > button:hover,
+#containerMenu > footer > button:focus {
+  background: rgb(89, 101, 224, 0.3);
+  outline: none;
+}

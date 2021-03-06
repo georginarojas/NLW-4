@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { GetServerSideProps } from "next";
 import Head from "next/head";
 import { CompletedChallenges } from "../../components/CompletedChallenges";
@@ -11,6 +11,7 @@ import styles from "../../styles/pages/Home.module.css";
 import { CountdownProvider } from "../../contexts/CountdownContext";
 import { ChallengesProvider } from "../../contexts/ChallengesContext";
 import { ModeDarkProvider } from "../../contexts/ModeDarkContext";
+import { MenuBar } from "../../components/MenuBar";
 
 interface HomeProps {
   level: number;
@@ -20,6 +21,10 @@ interface HomeProps {
 }
 
 export default function Home(props: HomeProps) {
+  useEffect(() => {
+    document.body.classList.remove("loginBody");
+  }, []);
+
   return (
     <ModeDarkProvider isModeDark={props.isModeDark}>
       <ChallengesProvider
@@ -27,24 +32,29 @@ export default function Home(props: HomeProps) {
         currentExperience={props.currentExperience}
         chanllengesCompleted={props.chanllengesCompleted}
       >
-        <div className={styles.container}>
-          <Head>
-            <title>Inicio | move.it</title>
-          </Head>
-          <ExperienceBar />
-          <CountdownProvider>
-            <section>
-              <div>
-                <Profile />
-                <CompletedChallenges />
-                <Countdown />
-              </div>
-              <div>
-                <ChallengeBox />
-              </div>
-            </section>
-          </CountdownProvider>
-        </div>
+        <section id={styles.containerPage}>
+          <div className={styles.containerMenu}>
+            <MenuBar isHomePage={true} isRankingPage={false}/>
+          </div>
+          <div className={styles.container}>
+            <Head>
+              <title>Inicio | move.it</title>
+            </Head>
+            <ExperienceBar />
+            <CountdownProvider>
+              <section>
+                <div>
+                  <Profile />
+                  <CompletedChallenges />
+                  <Countdown />
+                </div>
+                <div>
+                  <ChallengeBox />
+                </div>
+              </section>
+            </CountdownProvider>
+          </div>
+        </section>
       </ChallengesProvider>
     </ModeDarkProvider>
   );

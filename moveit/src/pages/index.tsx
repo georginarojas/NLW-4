@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 
 import styles from "../styles/pages/Login.module.css";
+import Head from "next/head";
 
 export default function Login(props) {
   const router = useRouter();
@@ -27,6 +28,9 @@ export default function Login(props) {
 
   return (
     <div className={styles.container}>
+      <Head>
+        <title>Login | move.it</title>
+      </Head>
       <section>
         <div className={styles.simbolo}>
           <img src="icons/simbolo.svg" alt="simbolo-login" />
@@ -49,6 +53,7 @@ export default function Login(props) {
               className={styles.inputField}
               placeholder="Digite seu username"
               onChange={handleChange}
+              required
             />
             <button type="submit" className={styles.inputButton}>
               <img src="icons/vector.svg" alt="arrow-input" />

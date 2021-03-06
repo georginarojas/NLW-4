@@ -121,7 +121,7 @@
   border-bottom-right-radius: 5px;
 }
 
-.inputButton:hover {
+.inputButton:focus {
     background: #4CD62B;
     outline: none;
 }

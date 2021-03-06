@@ -20,7 +20,7 @@ export function Profile() {
           Georgina Rojas
         </strong>
         <p>
-          <img src="icons/level.svg" alt="Level" />
+          <img src="../icons/level.svg" alt="Level" />
           Level {level}
         </p>
       </div>

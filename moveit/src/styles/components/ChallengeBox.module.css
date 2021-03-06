@@ -119,6 +119,11 @@
   background: var(--green);
 }
 
+.challengeFailedButton:focus,
+.challengeSucceededButton:focus {
+  outline: none;
+}
+
 .challengeActive footer button:hover {
   filter: brightness(0.9);
 }
