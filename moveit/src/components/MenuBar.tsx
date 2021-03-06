@@ -1,4 +1,5 @@
 import React, { ReactNode, useContext, useEffect, useState } from "react";
+import { useRouter } from "next/router";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
@@ -7,13 +8,13 @@ import styles from "../styles/components/MenuBar.module.css";
 import { ModeDarkContext } from "../contexts/ModeDarkContext";
 
 interface MenuBarProps {
-  // children: ReactNode;
   isHomePage: boolean;
   isRankingPage: boolean;
 }
 
 export function MenuBar({ ...rest }: MenuBarProps) {
   const { isModeDark } = useContext(ModeDarkContext);
+  const router = useRouter();
 
   const [isHomePage, setHomePage] = useState(rest.isHomePage ?? false);
   const [isRankingPage, setRankingPage] = useState(rest.isRankingPage ?? false);
@@ -44,10 +45,11 @@ export function MenuBar({ ...rest }: MenuBarProps) {
   function handleSingOutSubmit(e) {
     e.preventDefault();
     if (isModeDark) {
-        setSignOut("midnightblue");
+      setSignOut("midnightblue");
     } else {
       setSignOut("royalblue");
     }
+    router.push("/");
   }
 
   return (

@@ -64,7 +64,8 @@
 }
 
 #menuButton.menuButtonDark > ul > li > button > div {
-  background-color: #472dee;
+  /* background-color: #472dee; */
+  background-color: #191970;
 }
 
 #menuButton > ul > li > button > img {
@@ -72,13 +73,6 @@
   align-items: center;
   margin: auto;
 }
-
-/* #containerMenu.homeBtn:hover,
-#containerMenu.rankingBtn:hover {
-  background: rgb(89, 101, 224, 0.3);
-  outline: none;
-  transition: background-color 0.2s;
-} */
 
 #containerMenu > footer > button {
   width: 112px;
