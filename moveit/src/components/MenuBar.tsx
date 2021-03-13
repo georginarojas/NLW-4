@@ -34,12 +34,14 @@ export function MenuBar({ ...rest }: MenuBarProps) {
     e.preventDefault();
     setHomePage(false);
     setRankingPage(true);
+    router.push('/leaderboard')
   }
 
   function handleHomeSubmit(e) {
     e.preventDefault();
     setRankingPage(false);
     setHomePage(true);
+    router.push(`/home/gina`); // #### Corregir
   }
 
   function handleSingOutSubmit(e) {

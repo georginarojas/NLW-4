@@ -1,0 +1,113 @@
+.containerTable {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  border-spacing: 0px 10px;
+  border-collapse: separate;
+}
+
+.containerTable > thead {
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--text);
+}
+
+.containerTable > thead > tr {
+  height: 4rem;
+}
+
+/* .containerTable > tbody > tr {
+  height: 96px;
+} */
+
+.containerTable > tbody > tr > td {
+  background: var(--white);
+}
+
+/* Position column */
+.containerTable > tbody > tr > td:nth-child(1) {
+  width: 5.5rem;
+
+  /* background-color: pink; */
+  text-align: center;
+  font-size: 1.6rem;
+  color: var(--text);
+  font-weight: 500;
+  border-right: 5px solid var(--background);
+  border-radius: 5px 0px 0px 5px;
+}
+
+/* User column  */
+.containerTable > tbody > tr > td:nth-child(2) {
+  width: 30rem;
+  /* background-color: #31b9ae; */
+  padding: 1rem 0 1rem 2rem;
+}
+
+/* Challenge column  */
+.containerTable > tbody > tr > td:nth-child(3) {
+  width: 15rem;
+  /* background-color: burlywood; */
+  margin-left: 0;
+  border-left: 1px;
+  font-weight: 500;
+  color: var(--blue);
+}
+
+/* Experience column  */
+.containerTable > tbody > tr > td:nth-child(4) {
+  width: 10rem;
+  background: var(--white);
+  font-weight: 500;
+  color: var(--blue);
+  border-radius: 0px 5px 5px 0px;
+}
+
+.containerTable > tbody > tr > td > div {
+  display: flex;
+}
+
+.containerTable section {
+  flex: 1;
+  display: flex;
+}
+
+.containerTable > tbody > tr > td > section > div {
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+/* Avatar Github */
+.containerTable > tbody > tr > td > section > div > img {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  margin-right: 2rem;
+}
+
+/* User name */
+.containerTable tbody > tr > td > section > div > p:nth-child(1) {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--title);
+  margin-top: 0.5rem;
+  margin-right: 8rem;
+}
+
+/* Level user */
+.containerTable tbody > tr > td > section > div > p:nth-child(2) {
+  color: var(--text);
+  margin-top: 0.5rem;
+}
+
+/* Challenge and experience text */
+.containerTable tbody > tr > td > div > p {
+  color: var(--text);
+  margin-left: 5px;
+}
+
+/* Arrow up image */
+.containerTable tbody tr td p img {
+  margin-right: 0.5rem;
+}

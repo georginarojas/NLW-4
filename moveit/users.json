@@ -1,0 +1,38 @@
+[
+  {
+    "user": {
+      "name": "Georgina Rojas",
+      "profilePicture": "https://github.com/georginarojas.png",
+      "level": 3
+    },
+    "chanllengesCompleted": 20,
+    "currentExperience": 60
+  },
+  {
+    "user": {
+      "name": "Diego Fernandes",
+      "profilePicture": "https://github.com/diego3g.png",
+      "level": 10
+    },
+    "chanllengesCompleted": 100,
+    "currentExperience": 200
+  },
+  {
+    "user": {
+      "name": "Thiago Rodrigues",
+      "profilePicture": "https://github.com/rodrigues-t.png",
+      "level": 5
+    },
+    "chanllengesCompleted": 50,
+    "currentExperience": 75
+  },
+  {
+    "user": {
+      "name": "Adrian Beria",
+      "profilePicture": "https://github.com/Radinax.png",
+      "level": 3
+    },
+    "chanllengesCompleted": 20,
+    "currentExperience": 65
+  }
+]
