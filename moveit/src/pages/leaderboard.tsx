@@ -2,7 +2,7 @@ import { GetServerSideProps } from "next";
 import Head from "next/head";
 import React from "react";
 import { MenuBar } from "../components/MenuBar";
-import {TableRanking} from "../components/TableRanking";
+import { TableRanking } from "../components/TableRanking";
 import { ModeDarkProvider } from "../contexts/ModeDarkContext";
 
 import styles from "../styles/pages/Leaderboard.module.css";
@@ -12,6 +12,7 @@ interface LeaderboardProps {
 }
 
 export default function Leaderboard(props: LeaderboardProps) {
+  console.log("ISDARK ", props.isModeDark);
   return (
     <ModeDarkProvider isModeDark={props.isModeDark}>
       <section className={styles.container}>
@@ -22,12 +23,7 @@ export default function Leaderboard(props: LeaderboardProps) {
           <Head>
             <title> Leaderboard | move.it</title>
           </Head>
-          <div>
-            <h1>Leaderboard</h1>
-          </div>
-          <div>
-            <TableRanking />
-          </div>
+          <TableRanking />
         </div>
       </section>
     </ModeDarkProvider>
@@ -37,7 +33,7 @@ export default function Leaderboard(props: LeaderboardProps) {
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
   const { isModeDark } = ctx.req.cookies;
   const modeDarkValue = isModeDark ?? "false";
-
+  console.log("SERVER modedark ", isModeDark);
   return {
     props: {
       isModeDark: JSON.parse(modeDarkValue),

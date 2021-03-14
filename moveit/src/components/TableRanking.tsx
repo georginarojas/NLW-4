@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useContext } from "react";
 
 import users from "../../users.json";
+import { ModeDarkContext } from "../contexts/ModeDarkContext";
 import styles from "../styles/components/TableRanking.module.css";
 
 export function TableRanking() {
@@ -10,38 +11,61 @@ export function TableRanking() {
     { title: "desafios", accessor: "chanllengesCompleted" },
     { title: "experiência", accessor: "currentExperience" },
   ];
+  const { isModeDark } = useContext(ModeDarkContext);
   return (
-    <table className={styles.containerTable}>
-      <thead>
-        <tr>
-          {columns.map((col, i) => (
-            <td key={i}>{col.title.toUpperCase()}</td>
-          ))}
-        </tr>
-      </thead>
-      <tbody>
-        {users.map((user, i) => (
-          <tr key={i}>
-            <td>{i+1}</td>
-            <td>
-              <section>
-                <div>
-                  <img src={user.user.profilePicture} alt="avatar-github" />
-                </div>
-                <div>
-                  <p>{user.user.name}</p>
-                  <p>
-                    <img src="/icons/level.svg" alt="Level" />
-                    Level {user.user.level}
-                  </p>
-                </div>
-              </section>
-            </td>
-            <td> <div>{user.chanllengesCompleted} <p>completados</p></div> </td>
-            <td><div>{user.currentExperience} <p>xp</p></div> </td>
+    <>
+      <div className={isModeDark ? `${styles.titleDark}` : `${styles.title}`}>
+        <h1>Leaderboard</h1>
+      </div>
+
+      <table
+        id={styles.containerTable}
+        className={
+          isModeDark
+            ? `${styles.containerTableDark}`
+            : `${styles.containerTable}`
+        }
+      >
+        <thead>
+          <tr>
+            {columns.map((col, i) => (
+              <td key={i}>{col.title.toUpperCase()}</td>
+            ))}
           </tr>
-        ))}
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          {users.map((user, i) => (
+            <tr key={i}>
+              <td>{i + 1}</td>
+              <td>
+                <section>
+                  <div>
+                    <img src={user.user.profilePicture} alt="avatar-github" />
+                  </div>
+                  <div>
+                    <p>{user.user.name}</p>
+                    <p>
+                      <img src="/icons/level.svg" alt="Level" />
+                      Level {user.user.level}
+                    </p>
+                  </div>
+                </section>
+              </td>
+              <td>
+                {" "}
+                <div>
+                  {user.chanllengesCompleted} <p>completados</p>
+                </div>{" "}
+              </td>
+              <td>
+                <div>
+                  {user.currentExperience} <p>xp</p>
+                </div>{" "}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </>
   );
 }
