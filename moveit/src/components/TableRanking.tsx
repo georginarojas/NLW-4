@@ -1,8 +1,18 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 
 import users from "../../users.json";
 import { ModeDarkContext } from "../contexts/ModeDarkContext";
 import styles from "../styles/components/TableRanking.module.css";
+
+interface UsersList {
+  user: {
+    name: string;
+    profilePicture: string;
+    level: number;
+  };
+  chanllengesCompleted: number;
+  currentExperience: number;
+}
 
 export function TableRanking() {
   const columns = [
@@ -12,6 +22,23 @@ export function TableRanking() {
     { title: "experiência", accessor: "currentExperience" },
   ];
   const { isModeDark } = useContext(ModeDarkContext);
+  const [userList, setUserList] = useState<UsersList[]>([]);
+
+  useEffect(() => {
+    let list = users.sort(compare);
+    setUserList(list);
+  }, []);
+
+  function compare(a, b) {
+    let challengeA = a.chanllengesCompleted;
+    let challengeB = b.chanllengesCompleted;
+
+    let experienceA = a.currentExperience;
+    let experienceB = b.currentExperience;
+
+    return challengeB - challengeA || experienceB - experienceA;
+  }
+
   return (
     <>
       <div className={isModeDark ? `${styles.titleDark}` : `${styles.title}`}>
@@ -34,7 +61,7 @@ export function TableRanking() {
           </tr>
         </thead>
         <tbody>
-          {users.map((user, i) => (
+          {userList.map((user, i) => (
             <tr key={i}>
               <td>{i + 1}</td>
               <td>

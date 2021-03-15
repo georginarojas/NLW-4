@@ -12,7 +12,6 @@ interface LeaderboardProps {
 }
 
 export default function Leaderboard(props: LeaderboardProps) {
-  console.log("ISDARK ", props.isModeDark);
   return (
     <ModeDarkProvider isModeDark={props.isModeDark}>
       <section className={styles.container}>

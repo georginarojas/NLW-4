@@ -2,14 +2,17 @@
   font-size: 36px;
   font-weight: 600;
   color: var(--title);
-  margin-bottom: 1rem;
+  /* margin-bottom: 1rem; */
+  margin: 1rem 0 1rem 0;
 }
 
 .titleDark > h1 {
   font-size: 36px;
   font-weight: 600;
   color: var(--title-light);
-  margin-bottom: 1rem;
+  /* margin-bottom: 1rem; */
+  margin: 1rem 0 1rem 0;
+
 }
 
 #containerTable {
@@ -33,7 +36,7 @@
 }
 
 #containerTable > thead > tr {
-  height: 4rem;
+  height: 3rem;
 }
 
 /* Background columns */
